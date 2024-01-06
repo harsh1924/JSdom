@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #container {
+        font-size: 23px;
+    }
+
+    button {
+        font-size: 20px;
+        padding: 5px 10px;
+        cursor: pointer;
+    }
+</style>
+
+<body class="dark">
+    <div id="container">
+        This is
+        <span id="mode">Light</span>
+        Mode.
+    </div>
+    <button id="btn">Toggle Theme</button>
+
+
+    <script>
+        let toggleButton = document.getElementById('btn');
+        let modeName = document.getElementById('mode');
+        let body = document.body;
+        toggleButton.addEventListener('click', () => {
+            if (body.className == 'dark') {
+                darktheme();
+            }
+            else {
+                lightTheme();
+            }
+        });
+        function darktheme() {
+            body.style.backgroundColor = 'black';
+            document.getElementById('container').style.color = 'white';
+            modeName.textContent = 'Dark';
+            body.classList.toggle('light');
+        }
+        function lightTheme() {
+            body.style.backgroundColor = 'white';
+            document.getElementById('container').style.color = 'black';
+            modeName.textContent = 'Light';
+            body.classList.toggle('light');
+        }
+    </script>
+</body>
+
+</html>
