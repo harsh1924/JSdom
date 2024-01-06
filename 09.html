@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="login()">Login</button>
+    <button onclick="logout()">Logout</button>
+    <h1 id="status"></h1>
+
+    <script>
+        const status = document.getElementById("status");
+        const loginStatus = localStorage.getItem("auth");
+        let logout = () => {
+            localStorage.setItem("auth", false);
+            window.location.reload();
+        }
+        let login = () => {
+            localStorage.setItem("auth", true);
+            window.location.reload();
+        }
+        if (loginStatus === "true") {
+            status.innerText = "User has logged in"
+        }
+        else {
+            status.innerText = "User has not logged in"
+        }
+    </script>
+</body>
+
+</html>
