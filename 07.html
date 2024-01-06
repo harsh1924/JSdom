@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter</title>
+</head>
+
+<body>
+    <input type="text" name="text" id="filter" placeholder="Search for items">
+    <h2>Results</h2>
+    <ul id="items">
+        <li>One Piece</li>
+        <li>Naruto</li>
+        <li>AOT</li>
+        <li>Jujutsu Kaisen</li>
+        <li>Demon Slayer</li>
+        <li>My Hero Academia</li>
+        <li>Full Metal Alchemist</li>
+        <li>Pluto</li>
+    </ul>
+
+    <script>
+        const filter = document.getElementById("filter");
+        const items = document.getElementById("items").getElementsByTagName("li");
+        filter.addEventListener("input", () => {
+            const filterValue = filter.value.toLowerCase();
+            for (let i = 0; i < items.length; i++) {
+                if (items[i].innerText.toLowerCase().includes(filterValue)) {
+                    items[i].style.display = "block";
+                } else {
+                    items[i].style.display = "none";
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
