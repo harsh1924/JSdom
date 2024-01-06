@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Four</title>
+</head>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        font-size: 1.4rem;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+        align-items: start;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+    }
+
+    input {
+        padding: 5px 9px;
+    }
+
+    button {
+        padding: 5px 9px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h1>Sign Up Form</h1>
+        <form name="form" action="#" onsubmit="return validate()">
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" name="text" id="name" placeholder="Minimum 3 characters">
+            </div>
+            <div>
+                <label for="name">Email:</label>
+                <input type="email" name="text" id="email" placeholder="Enter Your Email">
+            </div>
+            <div>
+                <label for="name">Password:</label>
+                <input type="password" name="text" id="password" placeholder="Minimum 8 characters">
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        function validate() {
+            let nameHolder = document.forms["form"]["name"].value;
+            let passwordHolder = document.forms["form"]["password"].value;
+            if (nameHolder.length < 3 || passwordHolder.length < 8) {
+                alert("Form Validtion Failed");
+                return false;
+            }
+            else
+                {
+                    alert("Form Submitted");
+                    return false;
+                }
+        }
+    </script>
+</body>
+
+</html>
