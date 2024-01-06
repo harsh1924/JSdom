@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 3</title>
+</head>
+<style>
+    .container {
+        display: flex;
+        height: 50vh;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-size: x-large;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h1>Counter</h1>
+        <div class="count">
+            <button id="minusButton">-</button>
+            <span id="number">0</span>
+            <button id="plusButton">+</button>
+        </div>
+    </div>
+
+    <script>
+        let minus = document.getElementById('minusButton');
+        let plus = document.getElementById('plusButton');
+        let countNumber = document.getElementById('number');
+        let count = 0;
+        console.log(0);
+        minus.addEventListener('click', () => {
+            count = count - 1;
+            countNumber.textContent = count;
+            if (count < 0) {
+                alert("Counter is going beyond 0");
+            }
+        });
+        plus.addEventListener('click', () => {
+            count = count + 1;
+            countNumber.textContent = count;
+        });
+    </script>
+</body>
+
+</html>
