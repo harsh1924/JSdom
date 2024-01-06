@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="continer">
+        <h2>Update Your Profile Picture</h2>
+        <input type="file" class="inputTag">
+        <h3>Your Profile Picture</h3>
+        <span class="imagePreview">Preview</span>
+    </div>
+
+    <input type="file" id="file-input">
+    <img id="preview" src="" alt="">
+    
+    <script>
+    const fileInput = document.getElementById("file-input");
+    const preview = document.getElementById("preview");
+    
+    fileInput.addEventListener("change", () => {
+      const file = fileInput.files[0];
+      const reader = new FileReader();
+    
+      reader.onload = () => {
+        preview.src = reader.result;
+      };
+    
+      reader.readAsDataURL(file);
+    });
+    </script>
+</body>
+
+</html>
